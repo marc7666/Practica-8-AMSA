@@ -6,7 +6,7 @@ int main(int argc, char *argv[]){
 	struct sched_param scheduling_parameters;
 	pid_t pid = atoi(argv[1]); //First argument PID
 	//Priorities assignation
-	red();
+	blue();
 	printf("Assign to himself an execution priority of 20 \n");
 	int priority;
 	scheduling_parameters.sched_priority = 20; //Priority assignation
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
 	green();
 	printf("OK 1\n");
 
-	red();
+	blue();
 	printf("Assign to his father (shell) an execution priority of 30 \n");
 	int shell;
 	scheduling_parameters.sched_priority = 30; //Priority assignation
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 	green();
 	printf("OK 2\n");
 
-	red();
+	blue();
 	printf("Assign to the parameter process an execution priority of 10 \n");
 	int process_param;
 	scheduling_parameters.sched_priority = 10; //Priority assignation
@@ -38,6 +38,6 @@ void green(){
   printf("\033[1;32m");
 }
 
-void red(){
-  printf("\033[1;31m");
+void blue(){
+  printf("\033[1;34m");
 }
