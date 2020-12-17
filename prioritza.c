@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 	/*sched_setscheduler(pid_t pid, int policy, const struct sched_param *param);*/
 	priority = sched_setscheduler(getpid(), SCHED_RR, &scheduling_parameters); //Policy assignation
 	green();
-	printf("OK 1\n");
+	printf("OK 1, pid %d\n", getpid());
 
 	blue();
 	printf("Assign to his father (shell) an execution priority of 30 \n");
@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
 	scheduling_parameters.sched_priority = 30; //Priority assignation
 	shell = sched_setscheduler(getppid(), SCHED_RR, &scheduling_parameters); //Policy assignation
 	green();
-	printf("OK 2\n");
+	printf("OK 2, pid = %d\n", getppid());
 
 	blue();
 	printf("Assign to the parameter process an execution priority of 10 \n");
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
 	scheduling_parameters.sched_priority = 10; //Priority assignation
 	process_param = sched_setscheduler(pid, SCHED_RR, &scheduling_parameters); //Policy assignation
 	green();
-	printf("OK 3\n");
+	printf("OK 3, pid = %d\n", pid);
 
 	exit (0);
 }
