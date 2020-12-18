@@ -1,6 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<sched.h>
+#include<sys/types.h>
+#include<unistd.h>
+
+void green(){
+  printf("\033[1;32m");
+}
+
+void blue(){
+  printf("\033[1;34m");
+}
 
 int main(int argc, char *argv[]){
 	struct sched_param scheduling_parameters;
@@ -34,10 +44,3 @@ int main(int argc, char *argv[]){
 	exit (0);
 }
 
-void green(){
-  printf("\033[1;32m");
-}
-
-void blue(){
-  printf("\033[1;34m");
-}
